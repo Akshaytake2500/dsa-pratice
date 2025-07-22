@@ -1,0 +1,29 @@
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+        List<Integer> result=new ArrayList<>();
+        if(nums.length==1){
+            result.add(nums[0]);
+            return result;
+
+        }
+        // if(nums.length==2){
+        //     result.add(nums[0]);
+        //     result.add(nums[1]);
+        //     return result;
+        // }
+
+        Map<Integer,Integer> map=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+        }
+        int number=nums.length/3;
+        for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+            if(entry.getValue()>number){
+                result.add(entry.getKey());
+            }
+        }
+        System.out.println(map.toString());
+
+        return result;
+    }
+}
