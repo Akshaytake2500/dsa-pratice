@@ -1,0 +1,43 @@
+class Solution {
+    public int firstUniqChar(String s) {
+//================ Using Store[26] Approach =======================
+int[] store =new int[26];
+for(int i=0;i<s.length();i++){
+    char ch=s.charAt(i);
+    store[ch-'a']++;
+}
+for(int i=0;i<s.length();i++){
+    if(store[s.charAt(i)-'a']==1){
+        return i;
+    }
+}
+
+//================ Using Hashmap Approach =======================
+        // HashMap<Character,Integer> map=new HashMap<>();
+        // for(int i=0;i<s.length();i++){
+        //     char c=s.charAt(i);
+        //     map.put(c,map.getOrDefault(c,0)+1);
+        // }
+        // for(int i=0;i<s.length();i++){
+        //     if(map.get(s.charAt(i))==1){
+        //         return i;
+        //     }
+        // }
+
+//================ Brute force Approach =======================
+        // for(int i=0;i<s.length();i++){
+        //     boolean isUnique=true;
+        //     for(int j=0;j<s.length();j++){
+        //         if(i!=j && s.charAt(i)==s.charAt(j)){
+        //             isUnique=false;
+        //             break;
+        //         }
+        //     }
+        //     if(isUnique){
+        //     return i;
+        //     }
+        // }
+        
+        return -1;
+    }
+}
