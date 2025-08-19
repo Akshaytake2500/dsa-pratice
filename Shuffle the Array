@@ -1,0 +1,23 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int fa[]=new int[n*2];
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+            fa[count++]=nums[i];
+            fa[count++]=nums[n+i];
+
+        }
+        return fa;
+        /*int j=nums.length/2;
+        for(int i=0;i<nums.length-1;i++){
+            if(nums[i]>nums[j]){
+            int temp = nums[i+1];
+            nums[i+1]=nums[j];
+            nums[j]=temp;
+            // j++;
+            }
+        }
+        return nums;*/
+    }
+}
