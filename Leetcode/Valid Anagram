@@ -1,0 +1,32 @@
+class Solution {
+    public boolean isAnagram(String s1, String t1) {
+    //    Two ways we can solve by sorting and using Hashmap
+
+    //Using Sorting
+    char ch1[]=s1.toCharArray();
+    char ch2[]=t1.toCharArray();
+    Arrays.sort(ch1);
+    Arrays.sort(ch2);
+
+    return Arrays.equals(ch1,ch2);
+    //Using Hashamp   
+        // if (s1.length() != t1.length()) {
+        //     return false;
+        // }
+        // Map<Character, Integer> mapS = new HashMap<>();
+        // Map<Character, Integer> mapT = new HashMap<>();
+
+        // char[] ch1 = s1.toCharArray();
+        // char[] ch2 = t1.toCharArray();
+
+        // for (char c1 : ch1) {
+        //     mapS.put(c1, mapS.getOrDefault(c1, 0) + 1);
+        // }
+
+        // for (char c2 : ch2) {
+        //     mapT.put(c2, mapT.getOrDefault(c2, 0) + 1);
+        // }
+        // return mapS.equals(mapT);
+
+    }
+}
