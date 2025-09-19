@@ -1,29 +1,18 @@
-import java.util.*;
-
-class Main {
-    public static void main(String[] args){
-        int[] arr = {10, 30, 40, 50, 20};
-        int k = 3;
-        int index = arr.length - 1;
-        int[] dp = new int[index + 1];
-        Arrays.fill(dp, -1);
-        System.out.println(f(index, arr, k, dp));
-    }
-
-    public static int f(int index, int[] arr, int k, int[] dp){
-        dp[0] = 0; 
+import java.lang.*; 
+class Main { 
+    public static void main(String[] args) { 
+        int[] arr = {2,1,9,4}; 
+        int index=arr.length-1; 
         
-        for(int i = 1; i <= index; i++){
-            int minEnergy = Integer.MAX_VALUE;
-            for(int jump = 1; jump <= k; jump++){
-                if(i - jump >= 0){
-                    int energy = dp[i - jump] + Math.abs(arr[i] - arr[i - jump]);
-                    minEnergy = Math.min(minEnergy, energy);
-                }
-            }
-            dp[i] = minEnergy;
-        }
+        System.out.println(f(index,arr)); 
+    } 
+    public static int f(int index, int[] arr){
+        if(index==0) return arr[index];
+        if(index<0) return 0;
         
-        return dp[index];
-    }
+        int left =arr[index] + f(index-2,arr); 
+        int right = f(index-1,arr); 
+        
+        return Math.max(left,right); 
+    } 
 }
