@@ -1,4 +1,5 @@
 import java.lang.*; 
+
 class Main { 
     public static void main(String[] args) { 
         int[] arr = {2,1,9,4}; 
