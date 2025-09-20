@@ -32,6 +32,8 @@ class Main {
         if(index==0) return arr.get(index);
         if(index<0) return 0;
         
+        if(dp[index] != -1) return dp[index];
+        
         int left = arr.get(index) + rob(arr,index-2,dp);
         int right = rob(arr,index-1,dp);
         
